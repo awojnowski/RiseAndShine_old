@@ -1,7 +1,4 @@
 test text
 
-<<<<<<< HEAD
-Test text 2 - jeff
-=======
-guot3 change #1.
->>>>>>> refs/remotes/Nick-Comp3350/master
+
+fuck this
