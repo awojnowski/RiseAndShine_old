@@ -1,4 +1,4 @@
-package comp3350.assignment.riseandshine.activities;
+package comp3350.assignment.riseandshine;
 
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -18,11 +18,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
-
-import comp3350.assignment.riseandshine.R;
-
 public class Home extends AppCompatActivity {
 
+    static int currentMode = 0;
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -110,6 +108,7 @@ public class Home extends AppCompatActivity {
         public static PlaceholderFragment newInstance(int sectionNumber) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
+            currentMode = sectionNumber;
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
             return fragment;
@@ -118,11 +117,17 @@ public class Home extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_home, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-            return rootView;
 
+            View rootView = null;
+            int pizza = getArguments().getInt(ARG_SECTION_NUMBER);
+            if(pizza == 1)
+                rootView = inflater.inflate(R.layout.alarms_home, container, false);
+            else
+                rootView = inflater.inflate(R.layout.fragment_home, container, false);
+
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            //textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            return rootView;
         }
     }
 
@@ -153,7 +158,7 @@ public class Home extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "ALARMS";
                 case 1:
                     return "SECTION 2";
                 case 2:
