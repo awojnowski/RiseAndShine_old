@@ -1,4 +1,4 @@
-package comp3350.assignment.riseandshine;
+package comp3350.assignment.riseandshine.activities;
 
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -18,6 +18,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
+
+import comp3350.assignment.riseandshine.R;
 
 public class Home extends AppCompatActivity {
 
@@ -120,6 +122,7 @@ public class Home extends AppCompatActivity {
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
+
         }
     }
 
