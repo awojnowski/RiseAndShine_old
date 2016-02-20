@@ -1,4 +1,4 @@
-package comp3350.assignment.riseandshine;
+package comp3350.assignment.riseandshine.models;
 
 /**
  * Created by Jeff on 2/20/2016.
