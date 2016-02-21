@@ -1,0 +1,20 @@
+Comp 3350 Rise and Shine app log
+
+Feb 13th
+
+Skype call with the whole group.
+Got everyone set up on github and made sure everyone can commit/pull/etc
+Discussed plans for the app and that most memebers will be unable to work on the app untill the following weekend.
+
+Feb 20th 
+
+~2pm 
+Jeffrey Thiessen: Started design of class architecture
+
+~3pm
+Jeffrey Thiessen: Wrote barebones alarm / alarm list classes / class structure
+Elliot Frose: Setting up user interface.
+
+~5pm
+Jeffrey Thiessen: Bug fixing.
+Elliot Frose: Bug fixing
