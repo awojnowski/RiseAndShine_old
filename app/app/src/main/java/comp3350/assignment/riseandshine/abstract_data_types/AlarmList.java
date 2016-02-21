@@ -17,9 +17,13 @@ public class AlarmList {
 
     public Alarm[] getAlarms() {
 
-        // TODO: add this
+        return (Alarm[])this.alarms.toArray();
 
-        return null;
+    }
+
+    public boolean contains(Alarm alarm) {
+
+        return this.alarms.contains(alarm);
 
     }
 
@@ -27,13 +31,18 @@ public class AlarmList {
 
     public void addAlarm(Alarm alarm) {
 
-        // TODO: add this
+        if (this.contains(alarm)) {
+
+            return;
+
+        }
+        this.alarms.add(alarm);
 
     }
 
     public void removeAlarm(Alarm alarm) {
 
-        // TODO: add this
+        this.alarms.remove(alarm);
 
     }
 
