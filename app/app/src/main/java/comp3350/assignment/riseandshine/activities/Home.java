@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import comp3350.assignment.riseandshine.controllers.AlarmController;
 import comp3350.assignment.riseandshine.fragments.*;
 import comp3350.assignment.riseandshine.R;
 
@@ -71,6 +72,10 @@ public class Home extends AppCompatActivity {
                 overridePendingTransition(R.anim.abc_fade_in, 100000);
             }
         });
+
+        //init alarmList and fill with test data
+        AlarmController alarmController = AlarmController.sharedController();
+        AlarmController.populateAlarms();
 
     }
 
