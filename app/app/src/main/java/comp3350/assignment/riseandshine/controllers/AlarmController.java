@@ -5,11 +5,11 @@ import comp3350.assignment.riseandshine.models.*;
 
 public class AlarmController {
 
-    private static AlarmList alarmList = new AlarmList();
+    private static AlarmList alarmList;
 
     private AlarmController() {
 
-        ;
+        alarmList = new AlarmList();
 
     }
 
