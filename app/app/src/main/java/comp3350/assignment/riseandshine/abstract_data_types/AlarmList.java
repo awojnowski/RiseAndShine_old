@@ -5,11 +5,11 @@ import java.util.*;
 
 public class AlarmList {
 
-    private ArrayList<Alarm> alarms = new ArrayList<Alarm>();
+    private ArrayList<Alarm> alarms;
 
     public AlarmList() {
 
-        ;
+        alarms = new ArrayList<Alarm>();
 
     }
 
@@ -17,7 +17,7 @@ public class AlarmList {
 
     public Alarm[] getAlarms() {
 
-        return (Alarm[])this.alarms.toArray();
+        return this.alarms.toArray(new Alarm[alarms.size()]);
 
     }
 
@@ -31,11 +31,11 @@ public class AlarmList {
 
     public void addAlarm(Alarm alarm) {
 
-        if (this.contains(alarm)) {
+        /*if (this.contains(alarm)) {
 
             return;
 
-        }
+        }*/
         this.alarms.add(alarm);
 
     }
