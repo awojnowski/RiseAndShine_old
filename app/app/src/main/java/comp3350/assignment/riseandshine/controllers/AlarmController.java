@@ -6,6 +6,7 @@ import comp3350.assignment.riseandshine.models.*;
 public class AlarmController {
 
     private static AlarmList alarmList;
+    private static int currAlarmID = 1;
 
     private AlarmController() {
 
@@ -56,5 +57,17 @@ public class AlarmController {
             return new Alarm(2, 6, 45, 3, 3);
         else
             return new Alarm(3, 7, 56, 1, 1);
+    }
+
+    //TODO: takes the data, adds it to the SQL database, calls populateAlarms to update.
+    //for now (no sql) just add it to the alarmList
+    public static void addAlarm(int hours, int minutes, int soundID, int puzzleID)
+    {
+        Alarm a = new Alarm(currAlarmID, hours, minutes, soundID, puzzleID);
+        //increment alarmID
+        //TODO: get lowest non used AlarmID from SQLite instead of just incrementing, handle incrementing when appropriate
+        currAlarmID++;
+
+        alarmList.addAlarm(a);
     }
 }
