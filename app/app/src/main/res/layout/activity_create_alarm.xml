@@ -21,35 +21,48 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <android.support.design.widget.TextInputLayout
+            <TimePicker
+                android:id="@+id/time_picker"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"></TimePicker>
 
-                <EditText
-                    android:id="@+id/title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/prompt_title"
-                    android:inputType="textNoSuggestions"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
 
-                <EditText
-                    android:id="@+id/time"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_time"
-                    android:inputType="textNoSuggestions"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:text="Sound: "
+                    android:textStyle="bold"
+                    android:textSize="18dp"/>
 
-            </android.support.design.widget.TextInputLayout>
+                <Spinner
+                    android:id="@+id/sound_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></Spinner>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Puzzle: "
+                    android:textStyle="bold"
+                    android:textSize="18dp"/>
+
+                <Spinner
+                    android:id="@+id/puzzle_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></Spinner>
+            </LinearLayout>
 
             <Button
                 android:id="@+id/create_alarm_button"
