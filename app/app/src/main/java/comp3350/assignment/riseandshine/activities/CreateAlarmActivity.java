@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TimePicker;
+
 import comp3350.assignment.riseandshine.R;
 
 public class CreateAlarmActivity extends AppCompatActivity {
@@ -14,6 +16,7 @@ public class CreateAlarmActivity extends AppCompatActivity {
     // UI references.
     private EditText mTitleView;
     private EditText mTimeView;
+    private TimePicker mTimePicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,13 +26,16 @@ public class CreateAlarmActivity extends AppCompatActivity {
         // Set up the form.
         mTitleView = (EditText) findViewById(R.id.title);
         mTimeView = (EditText) findViewById(R.id.time);
+        mTimePicker = (TimePicker) findViewById(R.id.time_picker);
 
         Button mCreateAlarmButton = (Button) findViewById(R.id.create_alarm_button);
         mCreateAlarmButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                // getCurrentHour and min are now just getHour and getMin but then we can't support older versions of Android
+                Snackbar.make(view, "Alarm created with name: " + mTitleView.getText() + " and time: " + mTimePicker.getCurrentHour() + ":" + mTimePicker.getCurrentMinute(), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
             }
         });
     }

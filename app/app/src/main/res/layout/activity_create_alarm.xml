@@ -51,6 +51,11 @@
 
             </android.support.design.widget.TextInputLayout>
 
+            <TimePicker
+                android:id="@+id/time_picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></TimePicker>
+
             <Button
                 android:id="@+id/create_alarm_button"
                 style="?android:textAppearanceSmall"
