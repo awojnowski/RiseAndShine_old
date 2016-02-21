@@ -5,11 +5,11 @@ import java.util.*;
 
 public class AlarmList {
 
-    private ArrayList<Alarm> alarms = new ArrayList<Alarm>();
+    private ArrayList<Alarm> alarms;
 
     public AlarmList() {
 
-        ;
+        alarms = new ArrayList<Alarm>();
 
     }
 
@@ -17,9 +17,13 @@ public class AlarmList {
 
     public Alarm[] getAlarms() {
 
-        // TODO: add this
+        return this.alarms.toArray(new Alarm[alarms.size()]);
 
-        return null;
+    }
+
+    public boolean contains(Alarm alarm) {
+
+        return this.alarms.contains(alarm);
 
     }
 
@@ -27,13 +31,18 @@ public class AlarmList {
 
     public void addAlarm(Alarm alarm) {
 
-        // TODO: add this
+        /*if (this.contains(alarm)) {
+
+            return;
+
+        }*/
+        this.alarms.add(alarm);
 
     }
 
     public void removeAlarm(Alarm alarm) {
 
-        // TODO: add this
+        this.alarms.remove(alarm);
 
     }
 

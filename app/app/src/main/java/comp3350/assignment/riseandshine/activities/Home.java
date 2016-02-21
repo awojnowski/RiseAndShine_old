@@ -1,5 +1,6 @@
 package comp3350.assignment.riseandshine.activities;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,6 +20,7 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import comp3350.assignment.riseandshine.controllers.AlarmController;
 import comp3350.assignment.riseandshine.fragments.*;
 import comp3350.assignment.riseandshine.R;
 
@@ -62,10 +64,18 @@ public class Home extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                Intent intent = new Intent(Home.this, CreateAlarmActivity.class);
+                startActivity(intent);
+                //For adding animation to activity transition
+                overridePendingTransition(R.anim.abc_fade_in, 100000);
             }
         });
+
+        //init alarmList and fill with test data
+        AlarmController alarmController = AlarmController.sharedController();
+        AlarmController.populateAlarms();
 
     }
 
