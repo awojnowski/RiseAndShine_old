@@ -1,11 +1,11 @@
 package comp3350.assignment.riseandshine.fragments;
 
-//<<<<<<< HEAD
+<<<<<<< HEAD
 import android.content.Intent;
 import android.content.ComponentName;
-//=======
+=======
 import android.content.Context;
-//>>>>>>> refs/remotes/Nick-Comp3350/master
+>>>>>>> refs/remotes/Nick-Comp3350/master
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.annotation.NonNull;
@@ -14,11 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-//<<<<<<< HEAD
+<<<<<<< HEAD
 import android.widget.LinearLayout;
-//=======
+=======
 import android.widget.CompoundButton;
-//>>>>>>> refs/remotes/Nick-Comp3350/master
+>>>>>>> refs/remotes/Nick-Comp3350/master
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
