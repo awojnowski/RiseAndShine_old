@@ -1,12 +1,13 @@
 package comp3350.assignment.riseandshine.models;
 
-/**
- * Created by Jeff on 2/20/2016.
- */
+import comp3350.assignment.riseandshine.models.tasks.*;
+
 public class Alarm {
 
     public static String[] sounds = new String[]{"Sound 1", "Sound 2", "Sound 3", "Sound 4"};
     public static String[] puzzles = new String[]{"Puzzle 1", "Puzzle 2", "Puzzle 3", "Puzzle 4"};
+
+    private Task task = null;
 
     private int hours;
     private int minutes;
@@ -30,7 +31,9 @@ public class Alarm {
     }
 
     //never set data after init, only read from it. change to information is done in the sql database and then regenerated
-    public int getHours(){return hours;}
+    public int getHours(){
+        return hours;
+    }
 
     public int getMinutes() {
         return minutes;
@@ -55,6 +58,12 @@ public class Alarm {
     public void setIsActive(boolean isActive) {
         this.isActive = isActive;
     }
+
+    public Task getTask() {
+        return this.task;
+    }
+
+    // Info
 
     public String toString() {
         return hours + ":" + minutes + " Sound: " + Alarm.sounds[soundID] + " Puzzle: " + Alarm.puzzles[puzzleID];
