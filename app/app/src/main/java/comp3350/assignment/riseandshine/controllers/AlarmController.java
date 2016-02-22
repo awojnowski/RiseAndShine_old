@@ -70,12 +70,11 @@ public class AlarmController {
     }
     public static void editAlarm(int hours, int minutes, int soundID, int puzzleID, boolean isActive, int position)
     {
-        //position is for which alarm we are editing
-        //edit the alarm here
+        Alarm alarm = new Alarm(currAlarmID, hours, minutes, soundID, puzzleID, isActive);
+        alarmList.replaceAlarmAtIndex(alarm, position);
     }
-    public static void deleteAlarm(int hours, int minutes, int soundID, int puzzleID, boolean isActive, int position)
+    public static void deleteAlarm(int position)
     {
-        //position is for which alarm we are deleting
-        //edit the alarm here
+        alarmList.removeAlarmAtIndex(position);
     }
 }

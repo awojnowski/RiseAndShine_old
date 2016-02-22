@@ -46,4 +46,16 @@ public class AlarmList {
 
     }
 
+    public void removeAlarmAtIndex(int position) {
+
+        this.alarms.remove(position);
+
+    }
+
+    public void replaceAlarmAtIndex(Alarm alarm, int position) {
+
+        this.alarms.set(position, alarm);
+
+    }
+
 }

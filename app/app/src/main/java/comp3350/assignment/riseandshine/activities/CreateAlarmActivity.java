@@ -48,7 +48,6 @@ public class CreateAlarmActivity extends AppCompatActivity {
                 // getCurrentHour and min are now just getHour and getMin but then we can't support older versions of Android
                 AlarmController.sharedController().addAlarm(mTimePicker.getCurrentHour(), mTimePicker.getCurrentMinute(), mSoundSpinner.getSelectedItemPosition(), mPuzzleSpinner.getSelectedItemPosition(), false);
                 CreateAlarmActivity.this.finish();
-                // notify main alarm list view? (could also just listen to addAlarm)
             }
         });
     }
