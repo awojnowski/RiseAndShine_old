@@ -1,0 +1,121 @@
+Meetings
+========
+
+Meeting 1
+---------
+
+First meeting took place at the Engineering building and the first video interview with our client was made.
+
+Meeting 2
+---------
+
+Second meeting took place on 13-02-2016 though Skype where details and tasks of iteration 1 were discussed.
+
+Information about the GitHub repository was presented, and everyone in the group was brought up to speed regarding how to use Git.
+
+Meeting 3
+---------
+
+Third meeting took place on 20-02-2016 through Slack. Discussed implementation details of the application. Decided to create an AlarmController class to act as our stub database with a global shared instance for easy and safe access.
+
+
+
+Iteration 1 Detailed User Stories
+=================================
+
+New Alarm UI
+-------------
+Estimated time: 3 hours
+Completed by Lorenzo on Feb 20 at 11pm in ~4 hours
+
+Main Alarm UI
+-------------
+Estimated time: 4 hours
+Considering moving to iteration 2, requires timers running in background
+
+Editing UI
+-------------
+Estimated time: 3 hours
+Completed by Elliot on Feb 22 at 2am in ~2.5 hours
+
+Alarm List
+-------------
+Estimated time: 3 hours
+Completed by Lorenzo on Feb 21 at 11pm in ~2.5 hours
+
+Sound Options
+-------------
+Estimated time: 3 hours
+Lorenzo included placeholder sound options in New Alarm UI
+
+Settings Page
+-------------
+Estimated time: 4 hours
+Completed by Guo on Feb 21 at 6pm in ~4 hours
+
+Toggle Alarms
+-------------
+Estimated time: 2 hours
+Completed by Lorenzo on Feb 22 at 1am in ~2.5 hours
+
+
+
+Progress
+========
+
+13-02-2016
+----------
+
+~3pm
+
+Aaron Wojnowski: Generated template application with multiple tabbed pages.
+
+
+20-02-2016
+----------
+
+~2pm 
+
+Jeffrey Thiessen: Started design of class architecture
+
+Aaron Wojnowski: Set up tab-based view architecture using Fragments
+
+
+~3pm
+
+Jeffrey Thiessen: Wrote barebones alarm / alarm list classes / class structure
+
+Elliot Frose: Setting up user interface.
+
+
+~5pm
+
+Jeffrey Thiessen: Bug fixing.
+
+Elliot Frose: Bug fixing
+
+
+~8pm
+
+Jeffrey Thiessen: Completed stub database for alarms and displayed data to basic text UI on alarms page
+
+~11pm
+
+Lorenzo Gentile: Finished screen for creating new alarms
+
+
+21-02-2016
+----------
+
+~6pm
+
+Tianhua Guo: Completed setings tab.
+
+~9pm
+
+Aaron Wojnowski: Added some structure for implementing tasks (iteration 2).
+
+~11pm
+
+Lorenzo Gentile: Completed alarm list with toggles.
+
