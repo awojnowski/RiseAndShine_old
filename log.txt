@@ -3,19 +3,19 @@ Meetings
 
 Meeting 1
 ---------
-
+~60 minutes
 First meeting took place at the Engineering building and the first video interview with our client was made.
 
 Meeting 2
 ---------
-
+~150 minutes
 Second meeting took place on 13-02-2016 though Skype where details and tasks of iteration 1 were discussed.
 
 Information about the GitHub repository was presented, and everyone in the group was brought up to speed regarding how to use Git.
 
 Meeting 3
 ---------
-
+~60 minutes
 Third meeting took place on 20-02-2016 through Slack. Discussed implementation details of the application. Decided to create an AlarmController class to act as our stub database with a global shared instance for easy and safe access.
 
 
