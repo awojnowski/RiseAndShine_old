@@ -5,12 +5,10 @@ import comp3350.assignment.riseandshine.models.*;
 
 public class AlarmController {
 
-    private static AlarmList alarmList;
+    private static final AlarmList alarmList = new AlarmList();
     private static int currAlarmID = 1;
 
     private AlarmController() {
-
-        alarmList = new AlarmList();
 
     }
 
@@ -18,7 +16,7 @@ public class AlarmController {
 
     public AlarmList getAlarmList() {
 
-        return alarmList;
+        return this.alarmList;
 
     }
 
