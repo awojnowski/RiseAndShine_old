@@ -3,6 +3,7 @@ package comp3350.assignment.riseandshine.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +16,12 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 import comp3350.assignment.riseandshine.R;
 
@@ -27,6 +32,8 @@ import comp3350.assignment.riseandshine.models.Alarm;
 public class AlarmsFragment extends Fragment {
 
     public static CharSequence TAB_TITLE = "ALARMS";
+    private ListView listView;
+    private AlarmList sharedAlarmList;
 
     public AlarmsFragment() {
 
@@ -38,24 +45,35 @@ public class AlarmsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         final View rootView = inflater.inflate(R.layout.alarms_home, container, false);
-        ListView listView = (ListView) rootView.findViewById(R.id.alarm_list);
+        listView = (ListView) rootView.findViewById(R.id.alarm_list);
 
         //get array of alarms from alarm list
-        AlarmList alarmList = AlarmController.sharedController().getAlarmList();
-        Alarm[] alarms = alarmList.getAlarms();
+        sharedAlarmList = AlarmController.sharedController().getAlarmList();
 
-        AlarmListAdapter alarmAdapter = new AlarmListAdapter(getActivity(), R.layout.alarm_list_item, alarms);
+        AlarmListAdapter alarmAdapter = new AlarmListAdapter(getActivity(), R.layout.alarm_list_item, sharedAlarmList.getAlarms());
         listView.setAdapter(alarmAdapter);
 
         return rootView;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((AlarmListAdapter)listView.getAdapter()).updateAlarms(sharedAlarmList.getAlarms());
     }
 
 }
 
 class AlarmListAdapter extends ArrayAdapter<Alarm> {
 
-    public AlarmListAdapter(Context context, int resource, Alarm[] items) {
-        super(context, resource, items);
+    public AlarmListAdapter(Context context, int resource, Alarm[] alarms) {
+        super(context, resource, new ArrayList<Alarm>(Arrays.asList(alarms)));
+    }
+
+    public void updateAlarms(Alarm[] alarms) {
+        clear();
+        addAll(alarms);
+        notifyDataSetChanged();
     }
 
     @Override
