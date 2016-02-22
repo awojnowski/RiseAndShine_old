@@ -41,7 +41,7 @@ public class AlarmsFragment extends Fragment {
         Alarm[] alarms = alarmList.getAlarms();
 
         ArrayList<HashMap<String, String>> alarmDictList = new ArrayList<HashMap<String, String>>();
-        for(int i = 0 ; i < alarms.length; i++) {
+        for(int i = 0; i < alarms.length; i++) {
             HashMap<String, String> alarmDictionary = new HashMap<String, String>();
             Alarm alarm = alarms[i];
             alarmDictionary.put("time", alarm.timeString());
