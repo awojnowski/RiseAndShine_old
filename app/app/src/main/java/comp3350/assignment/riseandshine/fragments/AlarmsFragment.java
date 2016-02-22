@@ -1,5 +1,6 @@
 package comp3350.assignment.riseandshine.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,10 +10,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import comp3350.assignment.riseandshine.R;
 
@@ -40,20 +43,57 @@ public class AlarmsFragment extends Fragment {
         AlarmList alarmList = AlarmController.sharedController().getAlarmList();
         Alarm[] alarms = alarmList.getAlarms();
 
-        ArrayList<HashMap<String, String>> alarmDictList = new ArrayList<HashMap<String, String>>();
-        for(int i = 0; i < alarms.length; i++) {
-            HashMap<String, String> alarmDictionary = new HashMap<String, String>();
-            Alarm alarm = alarms[i];
-            alarmDictionary.put("time", alarm.timeString());
-            alarmDictionary.put("sound", alarm.soundName());
-            alarmDictionary.put("puzzle", alarm.puzzleName());
-            alarmDictList.add(alarmDictionary);
-        }
-
-        ListAdapter alarmAdapter = new SimpleAdapter(getActivity(), alarmDictList, R.layout.alarm_list_item, new String[]{"time", "sound", "puzzle"}, new int[] {R.id.time, R.id.sound, R.id.puzzle});
+        AlarmListAdapter alarmAdapter = new AlarmListAdapter(getActivity(), R.layout.alarm_list_item, alarms);
         listView.setAdapter(alarmAdapter);
 
         return rootView;
+    }
+
+}
+
+class AlarmListAdapter extends ArrayAdapter<Alarm> {
+
+    public AlarmListAdapter(Context context, int resource, Alarm[] items) {
+        super(context, resource, items);
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+
+        View v = convertView;
+
+        if (v == null) {
+            LayoutInflater vi;
+            vi = LayoutInflater.from(getContext());
+            v = vi.inflate(R.layout.alarm_list_item, null);
+        }
+
+        Alarm alarm = getItem(position);
+
+        if (alarm != null) {
+            TextView timeTextView = (TextView) v.findViewById(R.id.alarm_list_item_time);
+            TextView soundTextView = (TextView) v.findViewById(R.id.alarm_list_item_sound);
+            TextView puzzleTextView = (TextView) v.findViewById(R.id.alarm_list_item_puzzle);
+            Switch alarmSwitch = (Switch) v.findViewById(R.id.alarm_list_item_switch);
+
+            if (timeTextView != null) {
+                timeTextView.setText(alarm.timeString());
+            }
+
+            if (soundTextView != null) {
+                soundTextView.setText(alarm.soundName());
+            }
+
+            if (puzzleTextView != null) {
+                puzzleTextView.setText(alarm.puzzleName());
+            }
+
+            if (alarmSwitch != null) {
+                alarmSwitch.setChecked(alarm.isActive());
+            }
+        }
+
+        return v;
     }
 
 }
