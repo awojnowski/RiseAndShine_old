@@ -66,7 +66,7 @@ public class Home extends AppCompatActivity {
             public void onClick(View view) {
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
-                Intent intent = new Intent(Home.this, CreateAlarmActivity.class);
+                Intent intent = new Intent(Home.this, SettingsActivity.class);//CreateAlarmActivity.class);
                 startActivity(intent);
                 //For adding animation to activity transition
                 overridePendingTransition(R.anim.abc_fade_in, 100000);

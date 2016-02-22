@@ -9,4 +9,26 @@
     <string name="prompt_title">Alarm Title</string>
     <string name="prompt_time">Alarm Time</string>
     <string name="action_create_alarm">Create alarm</string>
+    
+    <string-array name="date_range_arr">
+        <item>Daily</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+
+    <string-array name="val_arr">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
 </resources>
