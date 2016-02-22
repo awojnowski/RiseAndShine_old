@@ -11,6 +11,7 @@
     <string name="prompt_time">Alarm Time</string>
     <string name="action_create_alarm">Create alarm</string>
     <string name="action_delete_alarm">Delete alarm</string>
+    <string name="action_edit_alarm">Finish Edit</string>
     
     <string-array name="snooze_arr">
         <item>0</item>

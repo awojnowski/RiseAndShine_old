@@ -43,12 +43,22 @@ public class EditAlarmActivity extends AppCompatActivity
         puzzlesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mPuzzleSpinner.setAdapter(puzzlesAdapter);
 
-        Button mCreateAlarmButton = (Button) findViewById(R.id.delete_alarm_button);
-        mCreateAlarmButton.setOnClickListener(new View.OnClickListener() {
+        Button mEditAlarmButton = (Button) findViewById(R.id.edit_alarm_button);
+        Button mDeleteAlarmButton = (Button)findViewById(R.id.delete_alarm_button);
+        mEditAlarmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // getCurrentHour and min are now just getHour and getMin but then we can't support older versions of Android
                 AlarmController.sharedController().editAlarm(mTimePicker.getCurrentHour(), mTimePicker.getCurrentMinute(), mSoundSpinner.getSelectedItemPosition(), mPuzzleSpinner.getSelectedItemPosition(), false, position);
+                EditAlarmActivity.this.finish();
+                // notify main alarm list view? (could also just listen to addAlarm)
+            }
+        });
+        mDeleteAlarmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // getCurrentHour and min are now just getHour and getMin but then we can't support older versions of Android
+                AlarmController.sharedController().deleteAlarm(mTimePicker.getCurrentHour(), mTimePicker.getCurrentMinute(), mSoundSpinner.getSelectedItemPosition(), mPuzzleSpinner.getSelectedItemPosition(), false, position);
                 EditAlarmActivity.this.finish();
                 // notify main alarm list view? (could also just listen to addAlarm)
             }
