@@ -52,9 +52,9 @@ public class AlarmController {
     private static Alarm getAlarm(int i)
     {
         if (i == 0)
-            return new Alarm(1, 5, 23, 2, 5);
+            return new Alarm(1, 5, 23, 2, 0);
         else if(i == 1)
-            return new Alarm(2, 6, 45, 3, 3);
+            return new Alarm(2, 6, 45, 0, 3);
         else
             return new Alarm(3, 7, 56, 1, 1);
     }

@@ -45,4 +45,8 @@ public class Alarm {
     public int getSoundID() {
         return soundID;
     }
+
+    public String toString() {
+        return hours + ":" + minutes + " Sound: " + Alarm.sounds[soundID] + " Puzzle: " + Alarm.puzzles[puzzleID];
+    }
 }
