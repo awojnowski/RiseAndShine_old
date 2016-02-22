@@ -6,8 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import comp3350.assignment.riseandshine.R;
 
@@ -34,7 +39,18 @@ public class AlarmsFragment extends Fragment {
         //get array of alarms from alarm list
         AlarmList alarmList = AlarmController.sharedController().getAlarmList();
         Alarm[] alarms = alarmList.getAlarms();
-        ArrayAdapter<Alarm> alarmAdapter = new ArrayAdapter<Alarm>(getActivity(), android.R.layout.simple_list_item_1, alarms);
+
+        ArrayList<HashMap<String, String>> alarmDictList = new ArrayList<HashMap<String, String>>();
+        for(int i = 0 ; i < alarms.length; i++) {
+            HashMap<String, String> alarmDictionary = new HashMap<String, String>();
+            Alarm alarm = alarms[i];
+            alarmDictionary.put("time", alarm.timeString());
+            alarmDictionary.put("sound", alarm.soundName());
+            alarmDictionary.put("puzzle", alarm.puzzleName());
+            alarmDictList.add(alarmDictionary);
+        }
+
+        ListAdapter alarmAdapter = new SimpleAdapter(getActivity(), alarmDictList, R.layout.alarm_list_item, new String[]{"time", "sound", "puzzle"}, new int[] {R.id.time, R.id.sound, R.id.puzzle});
         listView.setAdapter(alarmAdapter);
 
         return rootView;

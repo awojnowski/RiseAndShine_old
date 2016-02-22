@@ -48,11 +48,33 @@ public class Alarm {
         return soundID;
     }
 
-    public boolean isActive() { return isActive; }
+    public boolean isActive() {
+        return isActive;
+    }
 
-    public void setIsActive(boolean isActive) { this.isActive = isActive; }
+    public void setIsActive(boolean isActive) {
+        this.isActive = isActive;
+    }
 
     public String toString() {
         return hours + ":" + minutes + " Sound: " + Alarm.sounds[soundID] + " Puzzle: " + Alarm.puzzles[puzzleID];
+    }
+
+    public String timeString() {
+        int hrs = hours;
+        String ampm = "am";
+        if (hrs > 12) {
+            hrs = hrs % 12;
+            ampm = "pm";
+        }
+        return hrs + ":" + minutes + ampm;
+    }
+
+    public String soundName() {
+        return Alarm.sounds[soundID];
+    }
+
+    public String puzzleName() {
+        return Alarm.puzzles[puzzleID];
     }
 }
