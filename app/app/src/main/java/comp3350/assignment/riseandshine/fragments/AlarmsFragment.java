@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -68,7 +69,7 @@ class AlarmListAdapter extends ArrayAdapter<Alarm> {
             v = vi.inflate(R.layout.alarm_list_item, null);
         }
 
-        Alarm alarm = getItem(position);
+        final Alarm alarm = getItem(position);
 
         if (alarm != null) {
             TextView timeTextView = (TextView) v.findViewById(R.id.alarm_list_item_time);
@@ -90,6 +91,12 @@ class AlarmListAdapter extends ArrayAdapter<Alarm> {
 
             if (alarmSwitch != null) {
                 alarmSwitch.setChecked(alarm.isActive());
+                alarmSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        alarm.setIsActive(!alarm.isActive());
+                    }
+                });
             }
         }
 
