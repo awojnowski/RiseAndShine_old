@@ -50,18 +50,18 @@ public class AlarmController {
     private static Alarm getAlarm(int i)
     {
         if (i == 0)
-            return new Alarm(1, 5, 23, 2, 5);
+            return new Alarm(1, 5, 23, 2, 0, false);
         else if(i == 1)
-            return new Alarm(2, 6, 45, 3, 3);
+            return new Alarm(2, 6, 45, 0, 3, true);
         else
-            return new Alarm(3, 7, 56, 1, 1);
+            return new Alarm(3, 7, 56, 1, 1, false);
     }
 
     //TODO: takes the data, adds it to the SQL database, calls populateAlarms to update.
     //for now (no sql) just add it to the alarmList
-    public static void addAlarm(int hours, int minutes, int soundID, int puzzleID)
+    public static void addAlarm(int hours, int minutes, int soundID, int puzzleID, boolean isActive)
     {
-        Alarm a = new Alarm(currAlarmID, hours, minutes, soundID, puzzleID);
+        Alarm a = new Alarm(currAlarmID, hours, minutes, soundID, puzzleID, isActive);
         //increment alarmID
         //TODO: get lowest non used AlarmID from SQLite instead of just incrementing, handle incrementing when appropriate
         currAlarmID++;

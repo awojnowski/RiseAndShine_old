@@ -17,19 +17,23 @@ public class Alarm {
     // these ID's can be used to reference a resource file so heavy information does not need to be stored by the sql
     private int soundID;
     private int puzzleID;
+    private boolean isActive;
 
     // only the AlarmList class should be making Alarm objects
-    public Alarm(int alarmID, int hours, int minutes, int soundID, int puzzleID)
+    public Alarm(int alarmID, int hours, int minutes, int soundID, int puzzleID, boolean isActive)
     {
         this.alarmID = alarmID;
         this.hours = hours;
         this.minutes = minutes;
         this.soundID = soundID;
         this.puzzleID = puzzleID;
+        this.isActive = isActive;
     }
 
     //never set data after init, only read from it. change to information is done in the sql database and then regenerated
-    public int getHours(){return hours;}
+    public int getHours(){
+        return hours;
+    }
 
     public int getMinutes() {
         return minutes;
@@ -47,9 +51,39 @@ public class Alarm {
         return soundID;
     }
 
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setIsActive(boolean isActive) {
+        this.isActive = isActive;
+    }
+
     public Task getTask() {
-
         return this.task;
+    }
 
+    // Info
+
+    public String toString() {
+        return hours + ":" + minutes + " Sound: " + Alarm.sounds[soundID] + " Puzzle: " + Alarm.puzzles[puzzleID];
+    }
+
+    public String timeString() {
+        int hrs = hours;
+        String ampm = "am";
+        if (hrs > 12) {
+            hrs = hrs % 12;
+            ampm = "pm";
+        }
+        return hrs + ":" + minutes + ampm;
+    }
+
+    public String soundName() {
+        return Alarm.sounds[soundID];
+    }
+
+    public String puzzleName() {
+        return Alarm.puzzles[puzzleID];
     }
 }
