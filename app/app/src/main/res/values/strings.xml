@@ -4,11 +4,14 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="test_string">This is a test string.</string>
     <string name="title_activity_create_alarm">Create Alarm</string>
+    <string name="title_activity_edit_alarm">Edit Alarm</string>
 
     <!-- Strings related to creating alarms -->
     <string name="prompt_title">Alarm Title</string>
     <string name="prompt_time">Alarm Time</string>
     <string name="action_create_alarm">Create alarm</string>
+    <string name="action_delete_alarm">Delete alarm</string>
+    <string name="action_edit_alarm">Finish Edit</string>
     
     <string-array name="snooze_arr">
         <item>0</item>

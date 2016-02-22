@@ -21,6 +21,14 @@
         <activity
             android:name=".activities.CreateAlarmActivity"
             android:label="@string/title_activity_create_alarm"></activity>
+        <activity
+            android:name=".activities.EditAlarmActivity"
+            android:label="@string/title_activity_edit_alarm">
+            <intent-filter>
+                <action android:name="android.intent.action.EditAlarm"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

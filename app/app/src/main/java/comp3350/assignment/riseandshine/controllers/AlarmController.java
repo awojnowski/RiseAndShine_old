@@ -68,4 +68,14 @@ public class AlarmController {
 
         alarmList.addAlarm(a);
     }
+    public static void editAlarm(int hours, int minutes, int soundID, int puzzleID, boolean isActive, int position)
+    {
+        //position is for which alarm we are editing
+        //edit the alarm here
+    }
+    public static void deleteAlarm(int hours, int minutes, int soundID, int puzzleID, boolean isActive, int position)
+    {
+        //position is for which alarm we are deleting
+        //edit the alarm here
+    }
 }

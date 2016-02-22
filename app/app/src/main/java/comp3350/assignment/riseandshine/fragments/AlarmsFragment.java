@@ -1,5 +1,7 @@
 package comp3350.assignment.riseandshine.fragments;
 
+import android.content.Intent;
+import android.content.ComponentName;
 import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -7,7 +9,9 @@ import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.CompoundButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -24,8 +28,9 @@ import java.util.List;
 import java.util.ListIterator;
 
 import comp3350.assignment.riseandshine.R;
-
 import comp3350.assignment.riseandshine.abstract_data_types.AlarmList;
+import comp3350.assignment.riseandshine.activities.CreateAlarmActivity;
+import comp3350.assignment.riseandshine.activities.EditAlarmActivity;
 import comp3350.assignment.riseandshine.controllers.AlarmController;
 import comp3350.assignment.riseandshine.models.Alarm;
 
@@ -52,6 +57,22 @@ public class AlarmsFragment extends Fragment {
 
         AlarmListAdapter alarmAdapter = new AlarmListAdapter(getActivity(), R.layout.alarm_list_item, sharedAlarmList.getAlarms());
         listView.setAdapter(alarmAdapter);
+
+        AdapterView.OnItemClickListener listClick = new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id) {
+                Intent intent = new Intent("android.intent.action.EditAlarm");
+                //intent.setComponent(new ComponentName("comp3350.assignment.riseandshine.activities", ".activities.EditAlarmActivity"));
+                Bundle b = new Bundle();
+                b.putInt("key", position);
+                intent.putExtras(b);
+                startActivity(intent);
+                System.out.println("test text: " + position);
+            }
+        };
+
+        listView.setOnItemClickListener(listClick);
 
         return rootView;
     }
