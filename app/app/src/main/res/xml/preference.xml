@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Display Settings">
+
+        <ListPreference
+            android:key="display_format"
+            android:title="Display Format"
+            android:summary="Change alarm time appearance"
+            android:entries="@array/display_arr"
+            android:entryValues="@array/val_arr"
+            android:defaultValue="0" />
+
+        <CheckBoxPreference
+            android:key="time_format"
+            android:title="Time Format"
+            android:summary="Use 24-hour format"
+            android:defaultValue="true" />
+        
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Alarm Settings">
+
+        <ListPreference
+            android:key = "snooze_time"
+            android:title="Snooze Time"
+            android:summary="Change snooze time"
+            android:entries="@array/snooze_arr"
+            android:entryValues="@array/val_arr"
+            android:defaultValue="0" />
+
+        <CheckBoxPreference
+            android:key="vibrate_pref"
+            android:title="Vibrate"
+            android:summary="Vibrate on alarm"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
