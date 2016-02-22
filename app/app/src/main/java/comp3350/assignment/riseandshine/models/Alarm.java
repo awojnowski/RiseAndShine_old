@@ -1,12 +1,13 @@
 package comp3350.assignment.riseandshine.models;
 
-/**
- * Created by Jeff on 2/20/2016.
- */
+import comp3350.assignment.riseandshine.models.tasks.*;
+
 public class Alarm {
 
     public static String[] sounds = new String[]{"Sound 1", "Sound 2", "Sound 3", "Sound 4"};
     public static String[] puzzles = new String[]{"Puzzle 1", "Puzzle 2", "Puzzle 3", "Puzzle 4"};
+
+    private Task task = null;
 
     private int hours;
     private int minutes;
@@ -44,5 +45,11 @@ public class Alarm {
 
     public int getSoundID() {
         return soundID;
+    }
+
+    public Task getTask() {
+
+        return this.task;
+
     }
 }
